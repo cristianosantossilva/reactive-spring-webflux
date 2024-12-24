@@ -24,7 +24,6 @@ public class MovieInfoController {
     @ResponseStatus(HttpStatus.CREATED)
     public Mono<MovieInfo> addMovieInfo(@RequestBody @Valid MovieInfo movieInfo) {
 
-        System.out.println("");
         return moviesInfoService.addMovieInfo(movieInfo).log();
 
     }
