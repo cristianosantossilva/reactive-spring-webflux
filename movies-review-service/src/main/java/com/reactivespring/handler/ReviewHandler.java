@@ -2,14 +2,18 @@ package com.reactivespring.handler;
 
 import com.reactivespring.domain.Review;
 import com.reactivespring.repository.ReviewReactiveRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Mono;
 
+@Component
+@Slf4j
 public class ReviewHandler {
 
-    private ReviewReactiveRepository reviewReactiveRepository;
+    private final ReviewReactiveRepository reviewReactiveRepository;
 
     public ReviewHandler(ReviewReactiveRepository reviewReactiveRepository) {
         this.reviewReactiveRepository = reviewReactiveRepository;
