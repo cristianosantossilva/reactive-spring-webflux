@@ -27,4 +27,12 @@ public class ReviewHandler {
         ;
 
     }
+
+    public Mono<ServerResponse> getReviews(ServerRequest serverRequest) {
+
+        var reviewsFlux = reviewReactiveRepository.findAll();
+
+        return ServerResponse.ok().body(reviewsFlux, Review.class);
+
+    }
 }
